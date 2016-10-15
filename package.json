@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "http-server": "^0.9.0",
+    "rollup": "^0.36.3",
+    "tesseract.js": "^1.0.7",
+    "webrtc-adapter": "^2.0.4"
+  },
+  "scripts": {
+    "copy:adapter": "cp node_modules/webrtc-adapter/out/adapter.js dist/",
+    "copy:tesseract": "cp node_modules/tesseract.js/dist/*.js dist/",
+    "copy:libs": "npm run copy:adapter && npm run copy:tesseract",
+    "dist": "npm run copy:libs",
+
+    "serve": "http-server ."
+  }
+}
